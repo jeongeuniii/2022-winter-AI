@@ -1,13 +1,13 @@
 import pandas as pd
 import numpy as np
+
 # ----- 성적 입력 -----
 def Insert(student):
     num = int(input('학번 : '))
 
     #학번이 딕셔너리 내에 없을경우,
-    if (num not in student) == True:
+    if (num not in student) == True :
 
-        #성적 입력
         kor =  int(input('%d의 국어 점수 : '%num))
         math =  int(input('%d의 수학 점수 : '%num))
         eng = int(input('%d의 영어 점수 : '%num))
@@ -17,20 +17,20 @@ def Insert(student):
             score = kor+eng+math
             avg = round(score/3, 3)
             print('학생(%d)의 점수 합계는 %d점, 평균은 %d입니다.'%(num,score,avg))
+            
+            #딕셔너리 Key = Value
+            student[num] = [kor, eng, math, score, avg]
+            person = student[num]
+            return student
+            
         else :
+            print('학생(%d)의 정보가 입력되지 않습니다.'%num)
             return main()
 
     #학번이 중복일 경우
-    else:
+    else :
         print('%d은(는) 성적이 존재하는 학생입니다')
         return main()
-        
-
-    #딕셔너리 Key = Value
-    student[num] = [kor, eng, math, score, avg]
-    person = student[num]
-    return student
-
 
 # ----- 성적 현황 -----
 def View(student):
