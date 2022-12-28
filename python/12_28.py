@@ -1,6 +1,7 @@
+'''
 import pandas as pd
 import numpy as np
-
+'''
 # ----- 성적 입력 -----
 def Insert(student):
     num = int(input('학번 : '))
@@ -23,7 +24,7 @@ def Insert(student):
             person = student[num]
             return student
             
-        else :
+        elif save == 'n' :
             print('학생(%d)의 정보가 입력되지 않습니다.'%num)
             return main()
 
@@ -34,14 +35,14 @@ def Insert(student):
 
 # ----- 성적 현황 -----
 def View(student):
-    print("="*33)
+    print("="*37)
     print('학번 : [국어, 영어, 수학, 총점, 평균]')
 
     
     # 딕셔너리 key, value 출력하기(item)
     for key, value in student.items():
         print(key,':', value)
-    print("="*33)
+    print("="*37)
         
     return student
 
@@ -49,9 +50,9 @@ def main():
 
     # student 딕셔너리 생성
     student = dict()
-    print('='*33)
+    print('='*37)
     print('='*2, '피식 고등학교 성적처리 프로그램', '='*2)
-    print('='*33)
+    print('='*37)
     print('<< 메뉴 >>')
     print('1. 성적입력')
     print('2. 성적현황')
@@ -63,19 +64,19 @@ def main():
 
         # ----- 성적 입력 -----
         if select == 1:
-            print('='*33)
+            print('='*37)
             print('학생 성적 입력')
-            print('='*33)
+            print('='*37)
             student = Insert(student)
 
         # ----- 성적 현황 -----
-        elif select == 2:
-            print('='*33)
+        elif select == 2 :
+            print('='*37)
             print('학생 성적 현황')
-            print('='*33)
+            print('='*37)
             student = View(student)
             
-        else:
+        elif select == 3 :
             print('(프로그램 종료 - 개발자 : 20223175 문정은)')
             break
 
