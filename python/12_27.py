@@ -10,7 +10,11 @@ while True:
         for i in range(2, num+1,4):
             for j in range(1, 10):
                 for k in range(4):
-                    print('%d X %d = %d'%(i+k, j, (i+k)*j), end='\t')
+                    if i+k > num:
+                        continue
+                    
+                    else:
+                        print('%d X %d = %d'%(i+k, j, (i+k)*j), end='\t')
                 print()
             print()
 
