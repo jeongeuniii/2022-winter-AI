@@ -7,9 +7,11 @@ while True:
     print('몇단까지 출력할까요?(2~9단, 나머지 정수 값 입력시 종료됨)')
     num = int(input('>>'))
     if 2 <= num <= 9:
-        for j in range(1, 10):
-            for i in range(2, num+1):
-                print(i, 'X', j, '=', i*j, end='\t')
+        for i in range(2, num+1,4):
+            for j in range(1, 10):
+                for k in range(4):
+                    print('%d X %d = %d'%(i+k, j, (i+k)*j), end='\t')
+                print()
             print()
 
     else:
