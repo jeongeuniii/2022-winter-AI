@@ -66,7 +66,7 @@ def Insert(student):
 # ----- 성적 현황 -----
 def View(student):
     print("="*37)
-    print('학번 : [국어, 영어, 수학, 총점, 평균]')
+    print('학번 : [국어, 영어, 수학, 총점, 평균, 환산]')
 
     # 딕셔너리 key, value 출력하기(item)
     for key, value in student.items():
