@@ -7,7 +7,7 @@ def Insert(student):
     num = input('학번 : ')
     
     if (num.isnumeric()):
-
+        num = int(num)
         # 학번이 일의 자리일 경우
         if (0 < num < 10):
 
@@ -15,8 +15,28 @@ def Insert(student):
             if (num not in student) == True:
 
                 kor = input('%d의 국어 점수 : ' %num)
+                if (kor.isnumeric()) and (0 <= kor <= 100):
+                    kor = int(kor)
+
+                else:
+                    print('--> 정수 0~100을 입력하시오.')
+                    return 
+
                 math = input('%d의 수학 점수 : ' %num)
+                if (math.isnumeric()) and (0 <= math <= 100):
+                    math = int(math)
+
+                else:
+                    print('--> 정수 0~100을 입력하시오.')
+                    return 
+
                 eng = input('%d의 영어 점수 : ' %num)
+                if (eng.isnumeric()) and (0 <= eng <= 100):
+                    eng = int(eng)
+
+                else:
+                    print('--> 정수 0~100을 입력하시오.')
+                    return 
                 save = input('%d의 점수를 저장하시겠습니까?' %num)
 
                 if save == 'y':
@@ -43,6 +63,7 @@ def Insert(student):
                     student[num] = [kor, eng, math, score, avg, grade]
                     person = student[num]
                     return student
+                    return main()
 
                 elif save == 'n':
                     print('학생(%d)의 정보가 입력되지 않습니다.' % num)
