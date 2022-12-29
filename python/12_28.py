@@ -13,9 +13,9 @@ def Insert(student):
 
             # 학번이 딕셔너리 내에 없을경우,
             if (num not in student) == True:
-                
-                # 성적 입력값이 문자열일 경우와 0~100 아닐 경우 예외처리 필요 
                 '''
+                # 성적 입력값이 문자열일 경우와 0~100 아닐 경우 예외처리 필요 
+                
                 kor = input('%d의 국어 점수 : ' %num)
                 if (kor.isnumeric()) and (0 <= kor <= 100):
                     kor = int(kor)
