@@ -3,9 +3,11 @@ import pandas as pd
 import numpy as np
 '''
 # ----- 성적 입력 -----
+
+
 def Insert(student):
     num = input('학번 : ')
-    
+
     if (num.isnumeric()):
         num = int(num)
         # 학번이 일의 자리일 경우
@@ -13,78 +15,91 @@ def Insert(student):
 
             # 학번이 딕셔너리 내에 없을경우,
             if (num not in student) == True:
-                '''
-                # 성적 입력값이 문자열일 경우와 0~100 아닐 경우 예외처리 필요 
-                
-                kor = input('%d의 국어 점수 : ' %num)
-                if (kor.isnumeric()) and (0 <= kor <= 100):
-                    kor = int(kor)
 
-                else:
-                    print('--> 정수 0~100을 입력하시오.')
-                    return 
+                while True:
+                    # 성적 입력값이 문자열일 경우와 0~100 아닐 경우 다시 입력 받기
+                    kor = input('%d의 국어 점수 : ' % num)
+                    if (kor.isnumeric()):
+                        kor = int(kor)
 
-                math = input('%d의 수학 점수 : ' %num)
-                if (math.isnumeric()) and (0 <= math <= 100):
-                    math = int(math)
+                        if (kor < 0) or (kor > 100) :
+                            print('--> 정수 0~100을 입력하시오.')
+                            continue
+                    else:
+                        print('--> 정수 0~100을 입력하시오.')
+                        continue
 
-                else:
-                    print('--> 정수 0~100을 입력하시오.')
-                    return 
+                    math = input('%d의 수학 점수 : ' % num)
+                    if (math.isnumeric()) :
+                        math = int(math)
 
-                eng = input('%d의 영어 점수 : ' %num)
-                if (eng.isnumeric()) and (0 <= eng <= 100):
-                    eng = int(eng)
-
-                else:
-                    print('--> 정수 0~100을 입력하시오.')
-                    return 
-                '''
-                save = input('%d의 점수를 저장하시겠습니까?' %num)
-
-                if save == 'y':
-                    score = kor + eng + math
-                    avg = round(score/3)
-                    print('학생(%d)의 점수 합계는 %d점, 평균은 %d입니다.' %(num, score, avg))
-
-                    if 90 <= avg:
-                        grade = 'A'
-
-                    elif 80 <= avg < 90:
-                        grade = 'B'
-
-                    elif 70 <= avg < 80:
-                        grade = 'C'
-
-                    elif 60 <= avg < 70:
-                        grade = 'D'
+                        if (math < 0) or (math > 100):
+                            print('--> 정수 0~100을 입력하시오.')
+                            continue
 
                     else:
-                        grade = 'F'
+                        print('--> 정수 0~100을 입력하시오.')
+                        continue
 
-                    # 딕셔너리 Key = Value
-                    student[num] = [kor, eng, math, score, avg, grade]
-                    person = student[num]
-                    return student
-                    return main()
+                    eng = input('%d의 영어 점수 : ' % num)
+                    if (eng.isnumeric()):
+                        eng = int(eng)
 
-                elif save == 'n':
-                    print('학생(%d)의 정보가 입력되지 않습니다.' % num)
-                    return main()
+                        if (eng < 0) or (eng > 100):
+                            print('--> 정수 0~100을 입력하시오.')
+                            continue
 
-                else :
-                    return main()
+                    else:
+                        print('--> 정수 0~100을 입력하시오.')
+                        continue
+                    
+                    save = input('%d의 점수를 저장하시겠습니까?' % num)
+
+                    if save == 'y':
+                        score = kor + eng + math
+                        avg = round(score/3,3)
+                        print('학생(%d)의 점수 합계는 %d점, 평균은 %d입니다.' % (num, score, avg))
+
+                        if 90 <= avg:
+                            grade = 'A'
+
+                        elif 80 <= avg < 90:
+                            grade = 'B'
+
+                        elif 70 <= avg < 80:
+                            grade = 'C'
+
+                        elif 60 <= avg < 70:
+                            grade = 'D'
+
+                        else:
+                            grade = 'F'
+
+                        # 딕셔너리 Key = Value
+                        student[num] = [kor, eng, math, score, avg, grade]
+                        person = student[num]
+                        return student
+
+                    elif save == 'n':
+                        print('학생(%d)의 정보가 입력되지 않습니다.' % num)
+                        return main()
+
+                    else:
+                        return main()
 
             # 학번이 중복일 경우
-            else :
-                print('%d은(는) 성적이 존재하는 학생입니다'%num)
+            else:
+                print('%d은(는) 성적이 존재하는 학생입니다' % num)
                 return main()
-        else :
-            print("-->'%d'는 입력할 수 없습니다."%num)
+
+        # 학번이 일의 자리가 아닐 경우
+        else:
+            print("-->'%d'는 입력할 수 없습니다." % num)
             return main()
-    
-    else :
-        print("-->'%s'는 입력할 수 없습니다."%num)
+
+    # 학번이 숫자가 아닐 경우
+    else:
+        print("-->'%s'는 입력할 수 없습니다." % num)
         return main()
 
 # ----- 성적 현황 -----
@@ -98,6 +113,7 @@ def View(student):
     print("="*37)
 
     return student
+
 
 def main():
 
