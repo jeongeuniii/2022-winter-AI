@@ -2,9 +2,11 @@
 import pandas as pd
 import numpy as np
 '''
+
+# student 딕셔너리 생성(전역변수)
+student = dict()
+
 # ----- 성적 입력 -----
-
-
 def Insert(student):
     num = input('학번 : ')
 
@@ -116,9 +118,9 @@ def View(student):
 
 
 def main():
+    # 전역 변수
+    global student
 
-    # student 딕셔너리 생성
-    student = dict()
     print('='*37)
     print('='*2, '피식 고등학교 성적처리 프로그램', '='*2)
     print('='*37)
