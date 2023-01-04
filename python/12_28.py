@@ -110,7 +110,7 @@ def View(student):
     print('학번 : [국어, 영어, 수학, 총점, 평균, 환산]')
 
     # 딕셔너리 key, value 출력하기(item)
-    for key, value in student.items():
+    for key, value in sorted(student.items(), key = lambda x: x[0]):
         print(key, ':', value)
     print("="*37)
 
@@ -147,6 +147,7 @@ def main():
             print('='*37)
             student = View(student)
 
+        # ----- 프로그램 종료 -----
         elif select == 3:
             print('(프로그램 종료 - 개발자 : 20223175 문정은)')
             break
