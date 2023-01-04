@@ -112,10 +112,16 @@ def View(student):
     # 딕셔너리 key, value 출력하기(item)
     for key, value in sorted(student.items(), key = lambda x: x[0]):
         print(key, ':', value)
+
+    #최고 점수
+    for key, value in sorted(student.items(), key=lambda x: x[1], reverse=True):
+        print('최고 점수', student[0][0], student[0][1], student[0][3])
+
+    #최저 점수
+    for key, value in sorted(student.items(), key=lambda x: x[1]):
+        print('최저 점수',student[0][0], student[0][1], student[0][3])
+
     print("="*37)
-
-    return student
-
 
 def main():
     # 전역 변수
