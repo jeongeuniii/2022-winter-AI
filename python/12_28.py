@@ -55,7 +55,7 @@ def Insert(student):
                         print('--> 정수 0~100을 입력하시오.')
                         continue
                     
-                    save = input('%d의 점수를 저장하시겠습니까?' % num)
+                    save = input('%d의 점수를 저장하시겠습니까?(y/n)' % num)
 
                     if save == 'y':
                         score = kor + eng + math
