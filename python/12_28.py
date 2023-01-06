@@ -114,12 +114,10 @@ def View(student):
         print(key, ':', value)
 
     #최고 점수
-    for key, value in sorted(student.items(), key=lambda x: x[1], reverse=True):
-        print('최고 점수', student[0][0], student[0][1], student[0][3])
+    print(f'최고 점수:, {max(student.values())}, {max(student.values())}, {max(student.values())}')
 
     #최저 점수
-    for key, value in sorted(student.items(), key=lambda x: x[1]):
-        print('최저 점수',student[0][0], student[0][1], student[0][3])
+    print(f'최고 점수:, {min(student.values())}, {min(student.values())}, {min(student.values())}')
 
     print("="*37)
 
