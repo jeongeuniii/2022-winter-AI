@@ -1,8 +1,3 @@
-'''
-import pandas as pd
-import numpy as np
-'''
-
 # student 딕셔너리 생성(전역변수)
 student = dict()
 
@@ -114,10 +109,10 @@ def View(student):
         print(key, ':', value)
 
     #최고 점수
-    print(f'최고 점수:, {max(student.values())}, {max(student.values())}, {max(student.values())}')
+    print(f'최고 점수:, {max(student.values())}')
 
     #최저 점수
-    print(f'최고 점수:, {min(student.values())}, {min(student.values())}, {min(student.values())}')
+    print(f'최저 점수:, {min(student.values())}')
 
     print("="*37)
 
