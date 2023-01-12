@@ -55,6 +55,7 @@ def Insert(student):
                     if save == 'y':
                         score = kor + eng + math
                         avg = round(score/3,3)
+
                         print('학생(%d)의 점수 합계는 %d점, 평균은 %d입니다.' % (num, score, avg))
 
                         if 90 <= avg:
@@ -109,10 +110,10 @@ def View(student):
         print(key, ':', value)
 
     #최고 점수
-    print(f'최고 점수:, {max(student.values())}')
+    print(f'최고 점수: {max(student.values())}')
 
     #최저 점수
-    print(f'최저 점수:, {min(student.values())}')
+    print(f'최저 점수: {min(student.values())}')
 
     print("="*37)
 
