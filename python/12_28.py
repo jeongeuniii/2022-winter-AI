@@ -19,7 +19,7 @@ def Insert(student):
                     if (kor.isnumeric()):
                         kor = int(kor)
 
-                        if (kor < 0) or (kor > 100) :
+                        if (kor < 0) or (kor > 100):
                             print('--> 정수 0~100을 입력하시오.')
                             continue
                     else:
@@ -27,7 +27,7 @@ def Insert(student):
                         continue
 
                     math = input('%d의 수학 점수 : ' % num)
-                    if (math.isnumeric()) :
+                    if (math.isnumeric()):
                         math = int(math)
 
                         if (math < 0) or (math > 100):
@@ -49,14 +49,15 @@ def Insert(student):
                     else:
                         print('--> 정수 0~100을 입력하시오.')
                         continue
-                    
+
                     save = input('%d의 점수를 저장하시겠습니까?(y/n)' % num)
 
                     if save == 'y':
                         score = kor + eng + math
-                        avg = round(score/3,3)
+                        avg = round(score/3, 3)
 
-                        print('학생(%d)의 점수 합계는 %d점, 평균은 %d입니다.' % (num, score, avg))
+                        print('학생(%d)의 점수 합계는 %d점, 평균은 %d입니다.' %
+                              (num, score, avg))
 
                         if 90 <= avg:
                             grade = 'A'
@@ -106,7 +107,7 @@ def View(student):
     print('학번 : [국어, 영어, 수학, 총점, 평균, 환산]')
 
     # 딕셔너리 key, value 출력하기(item)
-    for key, value in sorted(student.items(), key = lambda x: x[0]):
+    for key, value in sorted(student.items(), key=lambda x: x[0]):
         print(key, ':', value)
 
     #최고 점수
